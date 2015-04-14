@@ -16,9 +16,26 @@ augroup END
 syntax on
 filetype plugin indent on
 
-" === Add line numbers ===
+" === Basic config ===
 set nu
 set rnu
+set incsearch " incremental search (as string is being typed)
+set hls " highlight search
+exec "set listchars=tab:>>,nbsp:~"
+set ruler " show current position in file
+set scrolloff=5 " show lines above and below cursor (when possible)
+" use 4 spaces instead of tabs during formatting
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+" smart case-sensitive search
+set ignorecase
+set smartcase
+" tab completion for files/bufferss
+set wildmode=longest,list
+set wildmenu
+set mouse+=a " enable mouse mode (scrolling, selection, etc)
 
 " === Powerline stuff ===
 if !exists('g:airline_symbols')
