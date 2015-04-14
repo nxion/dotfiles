@@ -1,14 +1,30 @@
-" Beau's vimrc
+" === Beau's vimrc ===
 set nocompatible " not vi compatible
 
-" plugin management
+" === Plugin management ===
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
-syntax on
+" === Syntax stuff ===
+augroup CursorLineOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
 
+syntax on
 filetype plugin indent on
 
-" Add line numbers
-set number
+" === Add line numbers ===
+set nu
+set rnu
+
+" === Powerline stuff ===
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
+let g:airline_powerline_fonts = 1
+set laststatus=2
