@@ -4,6 +4,7 @@ set -e
 
 CONFIG=".install.config.yaml"
 DOTBOT_DIR="dotbot"
+PL_FONTS="fonts"
 
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -12,3 +13,9 @@ cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+echo ""
+echo "Installing Powerline fonts..."
+cd "${PL_FONTS}"
+sudo bash install.sh
+echo "Done. Your configs have been setup. Dont forget to run sysconfig..."
+echo ""
