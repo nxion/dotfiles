@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Set Root password
+passwd
+
+# Update and upgrade the vps
+apt-get update && apt-get upgrade --yes
+
+# Install fail2ban
+apt-get install fail2ban --yes
+
+# use zsh
+chsh -s $(which zsh)
+
+# Add a new user
+useradd nx
+mkdir /home/nx
+mkdir /home/nx/.ssh
+chmod 700 /home/nx/.ssh
+
+# Set the new users password
+echo "Setting password for nx..."
+passwd nx
+
+# Setup firewall
+ufw allow from 67.61.79.2 to any port 22
+ufw enable
+
+# Install logwtch
+apt-get install logwatch
+echo "/usr/sbin/logwatch --output mail --mailto test@gmail.com --detail high" >> /etc/cron.daily/00logwatch
+
+
+
