@@ -17,5 +17,3 @@ echo ""
 echo "Installing Powerline fonts..."
 cd "${PL_FONTS}"
 sudo bash install.sh
-echo "Done. Your configs have been setup. Dont forget to run sysconfig..."
-echo ""
