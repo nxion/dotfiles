@@ -18,7 +18,7 @@ filetype plugin indent on
 
 " === Basic config ===
 set nu
-set rnu
+"set rnu
 set incsearch " incremental search (as string is being typed)
 set hls " highlight search
 exec "set listchars=tab:>>,nbsp:~"

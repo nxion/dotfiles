@@ -2,7 +2,7 @@
 
 - link:
     ~/.gitconfig: gitconfig
-    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux.conf: tmux/tmuxconf
     ~/.vim: vim/
     ~/.vimrc: vim/vimrc
     ~/.oh-my-zsh: zsh/oh-my-zsh
