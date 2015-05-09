@@ -54,6 +54,10 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 
 source $ZSH/oh-my-zsh.sh
 
+# Linuxbrew
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
